@@ -7,7 +7,7 @@ var multiThreadedQueue = require('multi-threaded-queue');
 var queue = new multiThreadedQueue(size, opt);
 ```
 * size: no of simultaneous threads
-* opt: { ..options.. }
+* opt: { ..optional.. }
  * autoStart: true,  // enable/disable auto start on object insertion, good to use with continuous queue insertion
  * executeFunction: function(obj,next){ .... }, // shorthand for execute function, def. same as below
  * completeFunction: function(){ ... } // shorthand for complete function, def. same as below
