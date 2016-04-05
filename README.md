@@ -3,8 +3,8 @@ Pure Javascript, simple multi-threaded queue simulation for nodejs
 
 ## Usage
 ```javascript
-var ThreadedQueueExecutor = require('multi-threaded-queue');
-var queue = new ThreadedQueueExecutor(size, opt);
+var multiThreadedQueue = require('multi-threaded-queue');
+var queue = new multiThreadedQueue(size, opt);
 ```
 * size: no of simultaneous threads
 * opt: { ..options.. }
