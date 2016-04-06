@@ -1,5 +1,5 @@
 {
-  "name": "multi-thread-queue",
+  "name": "multi-threaded-queue",
   "version": "1.0.0",
   "description": "Pure Javascript, simple multi-thread queue simulation.",
   "main": "index.js",
