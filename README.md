@@ -1,6 +1,9 @@
 # multi-threaded-queue
 Pure Javascript, simple multi-threaded queue simulation for nodejs
 
+![diagram](https://raw.githubusercontent.com/prabhathkm/multi-threaded-queue/master/diagram.png "Diagram")
+
+
 ## Usage
 ```javascript
 var multiThreadedQueue = require('multi-threaded-queue');
