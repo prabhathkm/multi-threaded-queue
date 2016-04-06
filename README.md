@@ -31,7 +31,9 @@ queue.setCompleteFunction(function(){
 
 // add objects to the queue
 queue.addToQueue(obj);
-
+queue.addToQueue(obj);
+.......
+queue.addToQueue(obj);
 
 // start processing the queue (not needed if autoStart enabled)
 queue.start();
