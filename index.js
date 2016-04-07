@@ -11,7 +11,7 @@ ThreadedQueueExecutor  = (function(size, opt) {
     opt = opt || {};
 
     // capture settings
-    self.autoStart = opt.autoStart || false;
+    self.autoStart = opt.autoStart || opt.autostart || false;
     self.noOfThreads = size || 1;
     self.tasks = [];
     self.runningThreads = false;
@@ -27,8 +27,8 @@ ThreadedQueueExecutor  = (function(size, opt) {
     };
 
     // set functions on init
-    self.executeFunction = opt.executeFunction || self.executeFunction;
-    self.completeFunction = opt.completeFunction || self.completeFunction;
+    self.executeFunction = opt.executeFunction || opt.executefunction || self.executeFunction;
+    self.completeFunction = opt.completeFunction || opt.completefunction || self.completeFunction;
 
     // add object to queue
     pub.addToQueue = function(obj){
