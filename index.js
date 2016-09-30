@@ -77,9 +77,14 @@ ThreadedQueueExecutor  = (function(size, opt) {
             if(self.tasks.length < threadsToAdd){
                 threadsToAdd = self.tasks.length;
             }
-            for( var i=0; i<threadsToAdd; i++ ){
-                self.executeThread();
+            if(threadsToAdd>0){
+                for( var i=0; i<threadsToAdd; i++ ){
+                    self.executeThread();
+                }
+            } else {
+                self.completeFunction();
             }
+
         }
     };
 
