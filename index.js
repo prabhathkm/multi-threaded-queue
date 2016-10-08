@@ -14,7 +14,7 @@ ThreadedQueueExecutor  = (function(size, opt) {
     self.autoStart = opt.autoStart || opt.autostart || false;
     self.noOfThreads = size || 1;
     self.tasks = [];
-    self.runningThreads = false;
+    self.runningThreads = 0;
 
     // default dummy functions
     self.executeFunction = function (obj, done) {
@@ -63,7 +63,7 @@ ThreadedQueueExecutor  = (function(size, opt) {
 
     // check for completion
     self.checkCompletion = function(){
-        if(self.tasks.length==0 && self.runningThreads==0){
+        if(self.tasks.length===0 && self.runningThreads===0){
             self.completeFunction();
         } else {
             pub.start();
@@ -73,19 +73,23 @@ ThreadedQueueExecutor  = (function(size, opt) {
     // start manually
     pub.start = function() {
         var threadsToAdd = self.noOfThreads - self.runningThreads;
+
         if(threadsToAdd>0){
             if(self.tasks.length < threadsToAdd){
                 threadsToAdd = self.tasks.length;
             }
-            if(threadsToAdd>0){
-                for( var i=0; i<threadsToAdd; i++ ){
-                    self.executeThread();
-                }
-            } else {
+        }
+
+        if(threadsToAdd>0){
+            for( var i=0; i<threadsToAdd; i++ ){
+                self.executeThread();
+            }
+        } else {
+            if(self.runningThreads===0) {
                 self.completeFunction();
             }
-
         }
+
     };
 
     return pub;
