@@ -49,3 +49,5 @@ npm test
 
 ## Release History
 * 1.0.0 Initial release
+* 1.1.0 Optimizations
+* 1.2.0 GetQueueSize implemented
